@@ -1,9 +1,9 @@
 import React,{useState} from "react";
-import Form from './components/Form/Form';
+import Form from './Form';
 function App() {
   return (
     <div>
-        <Form/>
+      <Form/>
     </div>
   );
 }
