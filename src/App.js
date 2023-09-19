@@ -1,9 +1,15 @@
-import React,{useState} from "react";
-import Form from './Form';
+import React from "react";
+import Form from './components/Form';
+import './App.css'
 function App() {
   return (
-    <div>
-      <Form/>
+    <div className="main">
+         <div className="left">
+             
+         </div>
+         <div className="right">
+             <Form/>
+         </div>
     </div>
   );
 }
