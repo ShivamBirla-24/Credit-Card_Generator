@@ -49,6 +49,7 @@
     justify-content: end;
     align-items: center;
     gap: 20px;
+    letter-spacing: 2px;
 }
 
 .number span{

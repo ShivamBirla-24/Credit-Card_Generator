@@ -1,6 +1,7 @@
 import React from 'react';
 import './FrontCard.css';
 
+
 function FrontCard({username,cardnumber,month,year,confirm,setConfirm}) {
   const firstFour=document.getElementById('first')
   const secondFour=document.getElementById('second')
@@ -47,7 +48,8 @@ function FrontCard({username,cardnumber,month,year,confirm,setConfirm}) {
   
 
   return (
-    <div className='card'>
+    <>
+      <div className='card'>
       <div className='upper'>
            <div className='whiteCircle'></div>
            <div className='blueCircle'></div>
@@ -61,7 +63,8 @@ function FrontCard({username,cardnumber,month,year,confirm,setConfirm}) {
               <span><span id='month'>00</span>/<span id='year'>00</span></span>
            </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 

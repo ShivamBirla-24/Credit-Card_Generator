@@ -1,5 +1,8 @@
 import React,{useState} from "react";
 import "./Form.css"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Form({username,setUsername,cardnumber,setCardNumber,month,setMonth,year,setYear,cvc,setCvc,error,setError,confirm,setConfirm}){
     // let [username,setUsername] = useState("");
@@ -21,11 +24,22 @@ function Form({username,setUsername,cardnumber,setCardNumber,month,setMonth,year
           }
           if(isValid(/^[A-Za-z\s]+$/,username) && isValid(/^(?:\d{16})?$/,cardnumber) && isValid(/^(0[1-9]|1[0-2])$|^ *$/,month) && isValid(/^(0[0-9]|[1-9][0-9])$|^ *$/,year) && isValid(/^\d{3}$|^$/,cvc)){
                  setConfirm(true);
+                 toast.success('Success!', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
           } 
     }
-    
+
     return(
-            <form onSubmit={handleSubmit} className="form">
+            <>
+              <form onSubmit={handleSubmit} className="form">
                 <div className="gapp">
                     <p>CARDHOLDER NAME</p>
                     <input className="inputbox cardname" type="text" placeholder="e.g. Jane Appleseed" 
@@ -71,6 +85,19 @@ function Form({username,setUsername,cardnumber,setCardNumber,month,setMonth,year
                     <button className="btn">Confirm</button>
                 </div>
             </form>
+            <ToastContainer
+               position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+            />
+            </>
     );
 }
 
